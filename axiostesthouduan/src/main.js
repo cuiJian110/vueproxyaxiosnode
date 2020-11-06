@@ -4,6 +4,12 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 
+import loading from "@/components/loading.js";
+Vue.use(loading);
+
+import myupload from "@/components/myupload.js";
+Vue.use(myupload);
+
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */

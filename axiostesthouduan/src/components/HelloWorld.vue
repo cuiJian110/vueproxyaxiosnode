@@ -4,6 +4,14 @@
   <button @click="handlePost2">post2</button>
   <button @click="handlePost3">post3</button>
   <input type="file" @change="handleChange">
+  <!-- <bbb></bbb> -->
+  <button @click="handleShow">show</button>
+  <div>
+    <my-upload
+    @commitFile="receiveFile"
+    ></my-upload>
+    <span>aaa</span>
+  </div>
 </div>
 </template>
 
@@ -19,7 +27,18 @@ export default {
       }
     }
   },
+  created() {
+    // api.student_selectCampStudentList({campId: "993",currentPage: 1,pageSize: 20}).then(res => {
+    //   console.log(res)
+    // })
+  },
   methods: {
+    receiveFile(e) {
+      console.log(e)
+    },
+    handleShow() {
+      this.$show();
+    },
     handlePost1() {
       api.testPost1(this.reqData).then(res => {
         console.log(res)

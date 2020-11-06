@@ -18,4 +18,8 @@ export default {
         let reqdata = param ? param : {};
         return postJson("testPost3", reqdata, {})
     },
+    student_selectCampStudentList(param) {
+        let reqdata = param ? param : {};
+        return postJson("student/selectCampStudentList", reqdata, {})
+    },
 }

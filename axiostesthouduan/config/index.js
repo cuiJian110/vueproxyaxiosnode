@@ -12,9 +12,9 @@ module.exports = {
     assetsPublicPath: '/',
     proxyTable: {
     '/api': {
-        target: 'http://localhost:5000',
+        target: 'https://test.hryun818.com',
         pathRewrite: {
-          '^/api': 'apir'   //实际请求去掉/api以空字符串代替
+          '^/api': '/edu'   //实际请求去掉/api以空字符串代替
         }
       }
     },
