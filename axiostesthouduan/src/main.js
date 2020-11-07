@@ -10,6 +10,10 @@ Vue.use(loading);
 import myupload from "@/components/myupload.js";
 Vue.use(myupload);
 
+// tips
+import tips from "@/components/tips/tips.js";
+// Vue.prototype.$mt = tips;
+Vue.use(tips);
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */

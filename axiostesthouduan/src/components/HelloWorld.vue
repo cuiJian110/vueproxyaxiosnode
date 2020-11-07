@@ -12,6 +12,10 @@
     ></my-upload>
     <span>aaa</span>
   </div>
+  <div>
+    <button @click="showTips">tips show</button>
+    <button @click="hideTips">tips hide</button>
+  </div>
 </div>
 </template>
 
@@ -33,6 +37,14 @@ export default {
     // })
   },
   methods: {
+    showTips() {
+      // this.$mt.showTips();
+      this.$mtShow("heheheh");
+    },
+    hideTips() {
+      // this.$mt.hideTips();
+      this.$mtHide();
+    },
     receiveFile(e) {
       console.log(e)
     },
