@@ -9,17 +9,17 @@ export default {
         return post("testPost1", reqdata, {})
     },
     //testPost2
-    testPost2(param) {
+    testPost2(param,config={}) {
         let reqdata = param ? param : {};
-        return postForm("testPost2", reqdata, {})
+        return postForm("testPost2", reqdata, config)
     },
     //testPost3
     testPost3(param) {
         let reqdata = param ? param : {};
         return postJson("testPost3", reqdata, {})
     },
-    student_selectCampStudentList(param) {
-        let reqdata = param ? param : {};
-        return postJson("student/selectCampStudentList", reqdata, {})
-    },
+    // student_selectCampStudentList(param) {
+    //     let reqdata = param ? param : {};
+    //     return postJson("student/selectCampStudentList", reqdata, {})
+    // },
 }

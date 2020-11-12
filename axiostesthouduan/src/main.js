@@ -14,6 +14,9 @@ Vue.use(myupload);
 import tips from "@/components/tips/tips.js";
 // Vue.prototype.$mt = tips;
 Vue.use(tips);
+
+import confirm from "@/components/confirm/confirm.js"
+Vue.use(confirm)
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */

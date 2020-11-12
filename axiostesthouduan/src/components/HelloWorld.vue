@@ -57,7 +57,13 @@ export default {
       })
     },
     handlePost2() {
-      api.testPost2(this.reqData).then(res => {
+      api.testPost2(this.reqData,{
+        onUploadProgress: progressEvent => {
+          console.log("progressEvent",progressEvent)
+          // let complete = (progressEvent.loaded / progressEvent.total * 100 | 0) + '%'
+          // self.uploadMessage = '上传 ' + complete
+        }
+      }).then(res => {
         console.log(res)
       })
     },

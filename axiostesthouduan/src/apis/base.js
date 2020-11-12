@@ -153,6 +153,7 @@ export const post = function(url,params) {
     headers: {
       'Content-Type': ContentType.NORMAL
     },
+    timeout: 100000,
   };
   return createApi(opts);
 }
@@ -163,18 +164,22 @@ export const postJson = function(url,params) {
       data: params,
       headers: {
         'Content-Type': ContentType.JSONTYPE
-      }
+      },
+      timeout: 100000,
     };
     return createApi(opts);
 }
-export const postForm = function(url,params) {
+export const postForm = function(url,params,config) {
   const opts = {
     url: getBaseUrl() + url,
     method: METHOD.POST,
     data: getClearJFormPData(params),
     headers: {
       'Content-Type': ContentType.FORMTYPE
-    }
+    },
+    timeout: 100000,
+
+    ...config
   };
   return createApi(opts);
 }
@@ -186,7 +191,8 @@ export const postExport = function(url,params) {
     responseType: 'blob',
     headers: {
       // 'Content-Type': ContentType.JSONTYPE
-    }
+    },
+    timeout: 100000,
   };
   return createApi(opts);
 }

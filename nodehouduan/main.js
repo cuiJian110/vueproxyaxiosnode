@@ -47,4 +47,4 @@ app.post("/apir/testPost3",(req,res) => {
     })
 })
 // 监听端口
-app.listen("5000",() => console.log("5000 startaaaddd..."))
+app.listen("5050",() => console.log("5050 startaaaddd..."))
