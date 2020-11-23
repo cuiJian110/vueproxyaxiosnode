@@ -1,6 +1,9 @@
 <template>
     <div>
         page2
+        <div>
+            {{$mStore.count}}
+        </div>
         <button @click="handleToPage1">to page1</button>
         <div>
             <button @click="handleConfirm">confirm</button>

@@ -5,8 +5,15 @@
 </template>
 
 <script>
+import {vm} from "@/utils/index";
 export default {
-  name: 'App'
+  name: 'App',
+  mounted() {
+    vm.$off("test")
+    vm.$on("test",(payload) => {
+      console.log("test",payload)
+    })
+  }
 }
 </script>
 

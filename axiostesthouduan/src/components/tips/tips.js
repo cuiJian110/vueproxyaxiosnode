@@ -30,10 +30,28 @@ export default new MyTips();
 // console.log("intance",intance)
 export default {
     install(Vue) {
+        // Vue.mixin({
+        //     methods: {
+        //         aaa(el) {
+        //             console.log(el)
+        //             const instance = Vue.extend(tips);
+        //             const vm = new instance();
+        //             vm.$mount()
+        //             console.log(vm)
+        //         }
+        //     }
+        // })
         const Tipinstance = Vue.extend(tips);
         const intance = new Tipinstance({
-            el: document.createElement("div")
+            // el: document.createElement("div")
+            // el: document.body
         })
+        // 在里面写 el: document.createElement("p") 跟在外面写intance.$mount()一个效果
+        // intance.$mount()
+        // document.body.appendChild(intance.$el);
+        console.log(intance)
+        intance.$mount();
+        // console.log(intance.vm)
         document.body.appendChild(intance.$el);
         this.untils(Vue,intance)
     },

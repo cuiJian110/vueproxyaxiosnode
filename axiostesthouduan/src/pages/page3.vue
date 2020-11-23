@@ -2,10 +2,14 @@
     <div>
         page3
         <button @click="handleToPage2">to page2</button>
+        <div>
+            <button @click="handleEmit">test emit</button>
+        </div>
     </div>
 </template>
 <script>
 import $ from "jquery";
+import {vm} from "@/utils/index";
 export default {
     methods: {
         handleToPage2() {
@@ -15,6 +19,9 @@ export default {
                 // query: query
             });
             window.open(href, "_blank");
+        },
+        handleEmit() {
+            vm.$emit("test",{name: "zs"})
         }
     }
 }

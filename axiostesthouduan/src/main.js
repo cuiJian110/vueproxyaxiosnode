@@ -18,7 +18,38 @@ Vue.use(tips);
 import confirm from "@/components/confirm/confirm.js"
 Vue.use(confirm)
 Vue.config.productionTip = false
+// console.log(window)
+// let storageObj = {};
+import "./utils/index";
 
+Vue.mixin({
+  beforeCreate:function() {
+    Vue.util.defineReactive(this,"$storage",window.localStorage)
+  }
+})
+window.addEventListener("storage",function(e) {
+  console.log("bianle")
+  Vue.$forceUpdate();
+})
+const test = {
+  testa: "tttaaa",
+  currentT: "test currentt"
+}
+Vue.mixin({
+  beforeCreate: function() {
+    Vue.util.defineReactive(this,"$test",test)
+  }
+})
+// console.dir(Vue)
+window.addEventListener("load",() => {
+  console.log(location.hash)
+})
+window.addEventListener("hashchange",() => {
+  console.log(location.hash)
+})
+
+import store from "@/store/store2.js";
+Vue.use(store);
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
